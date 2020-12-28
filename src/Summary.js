@@ -12,10 +12,10 @@ export default function Summary() {
         <div className="summary-text temp-current col-4">
           <span className="temperature">5</span>
           <span className="unit float-right">
-            <a href="#" className="active">
+            <a href="https://github.com/raheeeg/weather-react" className="active">
               °C
             </a>
-            |<a href="#">°F</a>
+            |<a href="https://github.com/raheeeg/weather-react">°F</a>
           </span>
         </div>
         <div className="summary-text temp-high col-8">
