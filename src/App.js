@@ -13,7 +13,7 @@ export default function App() {
       <Weather city="Paris" />
       <FiveDay />
     </div>
-    <a href="#">Open-source code</a> by Raheeg Ibrahim
+    <a href="https://github.com/raheeeg/weather-react">Open-source code</a> by Raheeg Ibrahim
     </div>
   );
 }
