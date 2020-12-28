@@ -1,4 +1,5 @@
 import React from "react";
+import "./FiveDay";
 
 export default function FiveDay() {
     return (

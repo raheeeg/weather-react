@@ -1,0 +1,14 @@
+.Search {
+  padding: 0;
+  margin: 0;
+}
+
+.enter-city {
+  text-align: left;
+  display: inline;
+}
+
+.btn {
+  text-align: right;
+  display: in-line;
+}

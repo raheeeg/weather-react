@@ -1,0 +1,11 @@
+.Summary {
+  background-color: #bce6eb;
+}
+
+.Summary.right {
+  text-align: right;
+}
+
+.Summary.left {
+  text-align: left;
+}
