@@ -1,11 +1,42 @@
-.Summary {
-  background-color: #bce6eb;
+.Summary.card {
+  padding: 2px;
+  border: 2px solid #120078;
+  border-radius: 0;
 }
 
-.Summary.right {
+.summary-text {
+  color: #120078;
+  font-weight: 1000;
+}
+
+.temp-low,
+.temp-high,
+.temp-current,
+.current-date-time,
+.unit {
   text-align: right;
 }
 
-.Summary.left {
+.temp-low,
+.temp-high {
+  padding: 2px 0 0 0;
+  font-size: 25px;
+}
+
+.unit {
+  font-size: 20px;
+  padding: 0;
+}
+
+.current-date-time {
+  margin-top: 20px;
+}
+
+.temp-current {
+  font-size: 70px;
+}
+
+.current-city {
   text-align: left;
+  font-size: 30px;
 }

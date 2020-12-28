@@ -1,3 +1,19 @@
 .Weather {
   background-color: #bce6eb;
+  color: #120078;
+  padding: 2px 20px;
+  margin: 0 auto;
+  font-family: "Commissioner", sans-serif;
+  font-weight: 500;
+  border: 2px solid #120078;
+}
+
+.weather {
+  text-align: left;
+  padding: 0;
+}
+
+.sun {
+  text-align: right;
+  padding: 0;
 }
