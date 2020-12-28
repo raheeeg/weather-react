@@ -1,13 +1,16 @@
 import './App.css';
 import Weather from "./Weather";
+import Search from "./Search";
+import Summary from "./Summary";
+import FiveDay from "./FiveDay";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <h1>Hi!</h1>
-      <Weather city="Arkansas" />
+    <div className="App container">
+      <Search />
+      <Summary />
+      <Weather city="Paris" />
+      <FiveDay />
     </div>
   );
 }
-
-export default App;

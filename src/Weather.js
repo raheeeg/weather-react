@@ -1,6 +1,5 @@
 import React from "react";
 import axios from 'axios';
-import Loader from 'react-loader-spinner';
 
 export default function Weather(props) {
     let apiKey = "14aa63322308690f6e8ffb6257ee41e5";
@@ -12,11 +11,15 @@ export default function Weather(props) {
     }
 
     return (
-        <Loader
-        type="Grid"
-        color="black"
-        height={80}
-        width={80} 
-        />
+        <div className="Weather card">
+            <div class="row">
+                <div class="weather col-6">
+                Sunny, patchy clouds<br />Humidity: 10%<br />Wind: 2mph
+            </div>
+            <div class="sun col-6">
+                Sunrise: 06:57<br />Solar noon: 12:50<br />Sunser: 18:48
+            </div>
+        </div>
+    </div>
     );
 }
