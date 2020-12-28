@@ -1,3 +1,7 @@
+.Summary {
+  background-image: url(./Images/sky.jpg);
+}
+
 .Summary.card {
   padding: 2px;
   border: 2px solid #120078;
