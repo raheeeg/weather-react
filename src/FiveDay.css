@@ -1,10 +1,7 @@
-.FiveDay.card {
+.FiveDay {
   background-color: #bce6eb;
   border: 2px solid #120078;
   border-radius: 0;
-}
-
-.FiveDay {
   font-family: "Commissioner", sans-serif;
   padding: 5px;
   text-align: center;

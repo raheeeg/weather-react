@@ -16,8 +16,7 @@
 .temp-low,
 .temp-high,
 .temp-current,
-.current-date-time,
-.unit {
+.current-date-time {
   text-align: right;
 }
 

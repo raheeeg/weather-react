@@ -1,5 +1,5 @@
 import React from "react";
-import "./FiveDay";
+import "./FiveDay.css";
 
 export default function FiveDay() {
     return (
@@ -25,7 +25,7 @@ export default function FiveDay() {
                 <div className="col">⛅</div>
                 <div className="col">⛅</div>
             </div>
-            <div className="row five-fay-temp">
+            <div className="row five-day-temp">
                 <div className="col">3°C</div>
                 <div className="col">3°C</div>
                 <div className="col">3°C</div>
