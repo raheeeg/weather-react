@@ -1,15 +1,30 @@
 .Search {
   border: 2px solid #120078;
+  background-color: #bce6eb;
   padding: 0;
   margin: 0;
 }
 
-.enter-city {
-  text-align: left;
-  display: inline;
+.search-form {
+  border-radius: 5px;
+  box-shadow: none;
 }
 
-.btn {
-  text-align: right;
-  display: in-line;
+.search-form,
+.search-button {
+  float: left;
+}
+
+.search-button,
+.location-button {
+  display: inline;
+  font-family: "Commissioner", sans-serif;
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+.location-button {
+  float: right;
+  background-color: #120078;
+  color: #bce6eb;
 }

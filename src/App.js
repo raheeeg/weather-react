@@ -1,19 +1,18 @@
 import './App.css';
 import Weather from "./Weather";
-import Search from "./Search";
 import Summary from "./Summary";
 import FiveDay from "./FiveDay";
+import Footer from "./Footer";
 
 export default function App() {
   return (
     <div>
     <div className="App container">
-      <Search />
       <Summary />
       <Weather city="Paris" />
       <FiveDay />
     </div>
-    <a href="https://github.com/raheeeg/weather-react">Open-source code</a> by Raheeg Ibrahim
+    <Footer />
     </div>
   );
 }

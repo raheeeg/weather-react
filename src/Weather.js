@@ -13,11 +13,11 @@ export default function Weather(props) {
 
     return (
         <div className="Weather card">
-            <div class="row">
-                <div class="weather col-6">
+            <div className="row">
+                <div className="weather col-6">
                 Sunny, patchy clouds<br />Humidity: 10%<br />Wind: 2mph
             </div>
-            <div class="sun col-6">
+            <div className="sun col-6">
                 Sunrise: 06:57<br />Solar noon: 12:50<br />Sunser: 18:48
             </div>
         </div>

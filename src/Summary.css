@@ -2,7 +2,7 @@
   background-image: url(./Images/sky.jpg);
 }
 
-.Summary.card {
+.Summary.row {
   padding: 2px;
   border: 2px solid #120078;
   border-radius: 0;
@@ -24,11 +24,13 @@
 .temp-high {
   padding: 2px 0 0 0;
   font-size: 25px;
+  list-style: none;
 }
 
 .unit {
   font-size: 20px;
   padding: 0;
+  float: right;
 }
 
 .current-date-time {

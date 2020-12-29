@@ -4,11 +4,11 @@ import "./Search.css";
 export default function Search() {
     return (
         <div className="Search">
-            <form className="enter-city">
-                <input type="search" placeholder="Search city" />
-                <input type="submit" value="Search" />
-            </form>
-            <button className="btn btn-dark float-right">Current city</button>
+            <form>
+                <input className="search-form" type="search" placeholder="Search city" />
+                <input className="search-button" type="submit" value="Search" />
+                <button className="location-button">Current city</button>
+            </form> 
         </div>
     )
 }
