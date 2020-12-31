@@ -1,13 +1,11 @@
 .Search {
   border: 2px solid #120078;
-  background-color: #bce6eb;
-  padding: 0;
-  margin: 0;
 }
 
 .search-form {
-  border-radius: 5px;
+  border-radius: 1px;
   box-shadow: none;
+  width: 60%;
 }
 
 .search-form,
@@ -19,12 +17,26 @@
 .location-button {
   display: inline;
   font-family: "Commissioner", sans-serif;
-  border-radius: 5px;
+  border-radius: 1px;
   box-shadow: none;
+  transition: 250ms;
+}
+
+.search-button:hover {
+  opacity: 60%;
+}
+
+.location-button:hover {
+  opacity: 60%;
+}
+
+.search-button {
+  width: 15%;
 }
 
 .location-button {
   float: right;
   background-color: #120078;
   color: #bce6eb;
+  width: 25%;
 }

@@ -1,9 +1,9 @@
 .App {
   text-align: center;
   font-family: "Commissioner", sans-serif;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 0;
-  border: 5px solid #120078;
+  border: 2px solid #120078;
   border-radius: 5px;
   max-width: 500px;
   background-color: #bce6eb;
