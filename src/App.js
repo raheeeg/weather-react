@@ -1,5 +1,5 @@
 import './App.css';
-import Weather from "./Weather";
+import Detailed from "./Detailed";
 import Summary from "./Summary";
 import FiveDay from "./FiveDay";
 import Footer from "./Footer";
@@ -9,7 +9,7 @@ export default function App() {
     <div>
     <div className="App container">
       <Summary />
-      <Weather city="Paris" />
+      <Detailed />
       <FiveDay />
     </div>
     <Footer />
