@@ -11,10 +11,11 @@ export default function WeatherData(props) {
     let wind = props.data.wind;
     let description = props.data.description;
     let date = props.data.date;
-    let city = props.city;
+    let city = props.data.city;
+    if (city) {
     city = city.trim();
     city = city[0].toUpperCase() + city.substring(1);
-    console.log(city);
+    }
 
     return (<div className="Weather">
         <Summary city={city} temp={temp} tempLow={tempLow} tempHigh={tempHigh} date={date}/>
