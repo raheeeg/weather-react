@@ -4,9 +4,9 @@ import axios from 'axios';
 import WeatherData from "./WeatherData";
 
 export default function Search() {
-    let [city, setCity] = useState("Liverpool");
+    const [city, setCity] = useState("Liverpool");
 //    let [list, setList] = useState(false);
-    let [weather, setWeather] = useState({});
+    const [weather, setWeather] = useState({});
 
     function getWeather(response) {
     //    setList(true);
@@ -23,7 +23,11 @@ export default function Search() {
 
     function updateCity(event) {
         event.preventDefault();
-        setCity(event.target.value);
+        if (city) {
+            setCity(event.target.value);
+        } else {
+            setCity(navigator.geolocation.getCurrentPosition());
+        }
     }
 
     function handleSumbit(event) {
@@ -37,7 +41,7 @@ export default function Search() {
         <form className="Search" onSubmit={handleSumbit} >
                 <input className="search-form" type="search" placeholder="Search city" onChange={updateCity} />
                 <input className="search-button" type="submit" value="Search" />
-                <button className="location-button">Current city</button>
+                <button className="location-button" onSubmit={handleSumbit}>Current city</button>
         </form> 
     )
 
@@ -45,7 +49,7 @@ export default function Search() {
     return (
         <div>
             {form}
-            <WeatherData data={weather} />
+            <WeatherData city={city} data={weather} />
         </div>
     );
 //    } else {

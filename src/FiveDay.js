@@ -1,7 +1,7 @@
 import React from "react";
 import "./FiveDay.css";
 
-export default function FiveDay() {
+export default function FiveDay(props) {
     return (
         <div className="FiveDay card">
             <div className="row day">
