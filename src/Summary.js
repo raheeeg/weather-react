@@ -1,11 +1,10 @@
 import React from "react";
 import "./Summary.css";
-import Search from "./Search";
+import Date from "./Date";
 
 export default function Summary() {
     return (
     <div className="Summary card">
-      <Search />
       <div className="Summary card-body">
         <div className="row">
         <div className="summary-text col-9">
@@ -28,7 +27,7 @@ export default function Summary() {
           </span>
         </div>
         <div className="summary-text current-city col-6">Paris</div>
-        <div className="summary-text current-date-time col-6">Sunday 27, 19:31</div>
+        <div className="summary-text current-date-time col-6"><Date /></div>
       </div>
     </div>
     </div>

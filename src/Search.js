@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import "./Search.css";
 import axios from 'axios';
+import WeatherData from "./WeatherData";
 
 export default function Search() {
-    let [city, setCity] = useState(null);
-    let [list, setList] = useState(false);
+    let [city, setCity] = useState("Liverpool");
+//    let [list, setList] = useState(false);
     let [weather, setWeather] = useState({});
 
     function getWeather(response) {
-        setList(true);
+    //    setList(true);
         setWeather({
-            temp: response.data.main.temp,
-            low: response.data.main.temp_min,
-            high: response.data.main.temp_max,
+            temp: Math.round(response.data.main.temp),
+            low: Math.round(response.data.main.temp_min),
+            high: Math.round(response.data.main.temp_max),
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
-            description: response.data.weather[0].description
+            description: response.data.weather[0].description,
+            date: new Date(response.data.dt * 1000)
         });
-        console.log(response.data);
     }
 
     function updateCity(event) {
@@ -40,20 +41,19 @@ export default function Search() {
         </form> 
     )
 
-    if (list) {
+//    if (list) {
     return (
         <div>
             {form}
-            {weather.temp}
+            <WeatherData data={weather} />
         </div>
     );
-    } else {
-        return (
-        <div>
-            {form}
-            
-        </div>
-        );
-    }
+//    } else {
+//        return (
+//        <div>
+//            {form}   
+//        </div>
+//        );
+//    }
     
 }
