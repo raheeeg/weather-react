@@ -4,10 +4,11 @@ import axios from 'axios';
 import WeatherData from "./WeatherData";
 
 export default function Search() {
-    const [city, setCity] = useState("Liverpool");
+    const [city, setCity] = useState(`Liverpool`);
     const [weather, setWeather] = useState({});
 
     function getWeather(response) {
+        console.log(response);
         setWeather({
             temp: Math.round(response.data.main.temp),
             low: Math.round(response.data.main.temp_min),
@@ -15,7 +16,8 @@ export default function Search() {
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
             description: response.data.weather[0].description,
-            date: new Date(response.data.dt * 1000),
+            sunrise: response.data.sys.sunrise,
+            sunset: new Date(response.data.sys.sunset * 1000),
             city: response.data.name
         });
     }
@@ -32,7 +34,6 @@ export default function Search() {
 
     let apiKey = "14aa63322308690f6e8ffb6257ee41e5";
     function getLocation(position) {
-        console.log(position);
         let latitude = position.coords.latitude;
         let longitude = position.coords.longitude;
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
@@ -55,7 +56,7 @@ export default function Search() {
     return (
         <div>
             {form}
-            <WeatherData city={city} data={weather} />
+            <WeatherData data={weather} />
         </div>
     );
 }

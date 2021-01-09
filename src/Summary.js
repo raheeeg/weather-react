@@ -1,5 +1,6 @@
 import React from "react";
 import "./Summary.css";
+import DateTime from "./DateTime";
 
 export default function Summary(props) {
     return (
@@ -26,7 +27,7 @@ export default function Summary(props) {
           </span>
         </div>
         <div className="summary-text current-city col-6">{props.city}</div>
-        <div className="summary-text current-date-time col-6">today</div>
+        <div className="summary-text current-date-time col-6"><DateTime /></div>
       </div>
     </div>
     </div>
