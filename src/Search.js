@@ -12,7 +12,7 @@ export default function Search() {
     function getWeather(response) {
         setWeather({
             temp: Math.round(response.data.main.temp),
-            low: Math.round(response.data.main.temp_min),
+            Temp: Math.round(response.data.main.temp),
             high: Math.round(response.data.main.temp_max),
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
@@ -24,17 +24,13 @@ export default function Search() {
     }
 
     function getForecast(response) {
+        console.log(response);
         setForecast({
-            dayOneLow: Math.round(response.data.list[7].main.temp_min),
-            dayTwoLow: Math.round(response.data.list[15].main.temp_min),
-            dayThreeLow: Math.round(response.data.list[23].main.temp_min),
-            dayFourLow: Math.round(response.data.list[31].main.temp_min),
-            dayFiveLow: Math.round(response.data.list[39].main.temp_min),
-            dayOneHigh: Math.round(response.data.list[7].main.temp_max),
-            dayTwoHigh: Math.round(response.data.list[15].main.temp_max),
-            dayThreeHigh: Math.round(response.data.list[23].main.temp_max),
-            dayFourHigh: Math.round(response.data.list[31].main.temp_max),
-            dayFiveHigh: Math.round(response.data.list[39].main.temp_max),
+            dayOneTemp: Math.round(response.data.list[7].main.temp),
+            dayTwoTemp: Math.round(response.data.list[15].main.temp),
+            dayThreeTemp: Math.round(response.data.list[23].main.temp),
+            dayFourTemp: Math.round(response.data.list[31].main.temp),
+            dayFiveTemp: Math.round(response.data.list[39].main.temp),
         });
     }
 

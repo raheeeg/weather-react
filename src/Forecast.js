@@ -3,17 +3,11 @@ import FiveDay from "./FiveDay";
 
 export default function Forecast(props) {
     let forecast = {
-    dayOneLow: props.data.dayOneLow,
-    dayTwoLow: props.data.dayTwoLow,
-    dayThreeLow: props.data.dayThreeLow,
-    dayFourLow: props.data.dayFourLow,
-    dayFiveLow: props.data.dayFiveLow,
-
-    dayOneHigh: props.data.dayOneHigh,
-    dayTwoHigh: props.data.dayTwoHigh,
-    dayThreeHigh: props.data.dayThreeHigh,
-    dayFourHigh: props.data.dayFourHigh,
-    dayFiveHigh: props.data.dayFiveHigh
+    dayOneTemp: props.data.dayOneTemp,
+    dayTwoTemp: props.data.dayTwoTemp,
+    dayThreeTemp: props.data.dayThreeTemp,
+    dayFourTemp: props.data.dayFourTemp,
+    dayFiveTemp: props.data.dayFiveTemp,
     }
 
     let now = new Date();
