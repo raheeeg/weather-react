@@ -1,7 +1,6 @@
 import React from "react";
 import Summary from "./Summary";
 import Detailed from "./Detailed";
-import FiveDay from "./FiveDay";
 
 export default function WeatherData(props) {
     let temp = props.data.temp;
@@ -44,6 +43,5 @@ export default function WeatherData(props) {
     return (<div className="Weather">
         <Summary city={city} temp={temp} tempLow={tempLow} tempHigh={tempHigh} />
         <Detailed description={description} humidity={humidity} wind={wind} sunrise={sunriseFormatted} sunset={sunsetFormatted} />
-        <FiveDay />
     </div>);
 }

@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import "./Search.css";
 import axios from 'axios';
 import WeatherData from "./WeatherData";
+import Forecast from "./Forecast";
 
 export default function Search() {
     const [city, setCity] = useState(`Liverpool`);
     const [weather, setWeather] = useState({});
+    const [forecast, setForecast] = useState({});
 
     function getWeather(response) {
-        console.log(response);
         setWeather({
             temp: Math.round(response.data.main.temp),
             low: Math.round(response.data.main.temp_min),
@@ -19,6 +20,21 @@ export default function Search() {
             sunrise: response.data.sys.sunrise,
             sunset: new Date(response.data.sys.sunset * 1000),
             city: response.data.name
+        });
+    }
+
+    function getForecast(response) {
+        setForecast({
+            dayOneLow: Math.round(response.data.list[7].main.temp_min),
+            dayTwoLow: Math.round(response.data.list[15].main.temp_min),
+            dayThreeLow: Math.round(response.data.list[23].main.temp_min),
+            dayFourLow: Math.round(response.data.list[31].main.temp_min),
+            dayFiveLow: Math.round(response.data.list[39].main.temp_min),
+            dayOneHigh: Math.round(response.data.list[7].main.temp_max),
+            dayTwoHigh: Math.round(response.data.list[15].main.temp_max),
+            dayThreeHigh: Math.round(response.data.list[23].main.temp_max),
+            dayFourHigh: Math.round(response.data.list[31].main.temp_max),
+            dayFiveHigh: Math.round(response.data.list[39].main.temp_max),
         });
     }
 
@@ -38,11 +54,15 @@ export default function Search() {
         let longitude = position.coords.longitude;
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(getWeather);
+        apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(getForecast);
     }
     function handleSumbit(event) {
         event.preventDefault();
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(getWeather);
+        apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(getForecast);
     }
 
     let form = (
@@ -57,6 +77,7 @@ export default function Search() {
         <div>
             {form}
             <WeatherData data={weather} />
+            <Forecast data={forecast} />
         </div>
     );
 }
