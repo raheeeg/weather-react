@@ -16,5 +16,16 @@ export default function Forecast(props) {
     dayFiveHigh: props.data.dayFiveHigh
     }
 
-    return <div><FiveDay data={[forecast]} /></div>;
+    let now = new Date();
+    let days = ["Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let nextFiveDays = {
+        dayOne: days[now.getDay()+1],
+        dayTwo: days[now.getDay()+2],
+        dayThree: days[now.getDay()+3],
+        dayFour: days[now.getDay()+4],
+        dayFive: days[now.getDay()+5]
+    }
+    
+
+    return <div><FiveDay data={[forecast]} days={[nextFiveDays]} /></div>;
 }

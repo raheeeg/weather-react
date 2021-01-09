@@ -5,11 +5,11 @@ export default function FiveDay(props) {
     return (
         <div className="FiveDay card">
             <div className="row day">
-                <div className="col">Monday</div>
-                <div className="col">Tuesday</div>
-                <div className="col">Wednesday</div>
-                <div className="col">Thursday</div>
-                <div className="col">Friday</div>
+                <div className="col">{props.days[0].dayOne}</div>
+                <div className="col">{props.days[0].dayTwo}</div>
+                <div className="col">{props.days[0].dayThree}</div>
+                <div className="col">{props.days[0].dayFour}</div>
+                <div className="col">{props.days[0].dayFive}</div>
             </div>
             <div className="row five-day-temp">
                 <div className="col">{props.data[0].dayOneHigh}°C</div>
