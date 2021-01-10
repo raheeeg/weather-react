@@ -28,7 +28,8 @@
 }
 
 .col-8 {
-  padding: 15px;
+  padding: 20px 0;
+  width: fit-content;
 }
 
 .unit {
@@ -43,7 +44,7 @@
 }
 
 .temp-current {
-  font-size: 70px;
+  font-size: 75px;
   max-width: fit-content;
   max-height: fit-content;
   margin: 0 auto;
