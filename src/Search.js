@@ -5,7 +5,7 @@ import WeatherData from "./WeatherData";
 import Forecast from "./Forecast";
 
 export default function Search() {
-    const [city, setCity] = useState(`Liverpool`);
+    const [city, setCity] = useState(null);
     const [weather, setWeather] = useState({});
     const [forecast, setForecast] = useState({});
 
@@ -48,7 +48,8 @@ export default function Search() {
         navigator.geolocation.getCurrentPosition(getLocation);
     }
 
-    let apiKey = "14aa63322308690f6e8ffb6257ee41e5";
+
+    let apiKey = "c4c23d1ca620276b9ce0b65fc26ed639";
     function getLocation(position) {
         let latitude = position.coords.latitude;
         let longitude = position.coords.longitude;
@@ -57,6 +58,7 @@ export default function Search() {
         apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(getForecast);
     }
+
     function handleSumbit(event) {
         event.preventDefault();
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;

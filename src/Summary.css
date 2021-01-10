@@ -27,7 +27,7 @@
   margin-top: 5px;
 }
 
-.col-9 {
+.col-8 {
   padding: 15px;
 }
 
@@ -46,7 +46,7 @@
   font-size: 70px;
   max-width: fit-content;
   max-height: fit-content;
-  padding: 0 0 20px 0;
+  margin: 0 auto;
 }
 
 .current-city {

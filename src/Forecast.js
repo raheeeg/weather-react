@@ -26,11 +26,7 @@ export default function Forecast(props) {
         dayThreeIcon: props.data.dayThreeIcon,
         dayFourIcon: props.data.dayFourIcon,
         dayFiveIcon: props.data.dayFiveIcon,
-    }
-
-    console.log(icon.dayFiveIcon);
-
-    
+    }    
 
     return <div><FiveDay data={[forecast]} days={[nextFiveDays]} image={[icon]} /></div>;
 }
