@@ -19,7 +19,18 @@ export default function Forecast(props) {
         dayFour: days[now.getDay()+4],
         dayFive: days[now.getDay()+5]
     }
+
+    let icon = {
+        dayOneIcon: props.data.dayOneIcon,
+        dayTwoIcon: props.data.dayTwoIcon,
+        dayThreeIcon: props.data.dayThreeIcon,
+        dayFourIcon: props.data.dayFourIcon,
+        dayFiveIcon: props.data.dayFiveIcon,
+    }
+
+    console.log(icon.dayFiveIcon);
+
     
 
-    return <div><FiveDay data={[forecast]} days={[nextFiveDays]} /></div>;
+    return <div><FiveDay data={[forecast]} days={[nextFiveDays]} image={[icon]} /></div>;
 }

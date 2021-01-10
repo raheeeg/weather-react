@@ -12,11 +12,21 @@ export default function FiveDay(props) {
                 <div className="col">{props.days[0].dayFive}</div>
             </div>
             <div className="row icon">
-                <div className="col">⛅</div>
-                <div className="col">⛅</div>
-                <div className="col">⛅</div>
-                <div className="col">⛅</div>
-                <div className="col">⛅</div>
+                <div >
+                    <img src={props.image[0].dayOneIcon} alt="weather-icon" />
+                </div>
+                <div >
+                    <img src={props.image[0].dayTwoIcon} alt="weather-icon" />
+                </div>
+                <div >
+                    <img src={props.image[0].dayThreeIcon} alt="weather-icon" />
+                </div>
+                <div >
+                    <img src={props.image[0].dayFourIcon} alt="weather-icon" />
+                </div>
+                <div >
+                    <img src={props.image[0].dayFiveIcon} alt="weather-icon" />
+                </div>
             </div>
             <div className="row five-day-temp">
                 <div className="col">{props.data[0].dayOneTemp}°C</div>

@@ -12,7 +12,7 @@ export default function Search() {
     function getWeather(response) {
         setWeather({
             temp: Math.round(response.data.main.temp),
-            Temp: Math.round(response.data.main.temp),
+            low: Math.round(response.data.main.temp_min),
             high: Math.round(response.data.main.temp_max),
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
@@ -24,13 +24,17 @@ export default function Search() {
     }
 
     function getForecast(response) {
-        console.log(response);
         setForecast({
-            dayOneTemp: Math.round(response.data.list[7].main.temp),
-            dayTwoTemp: Math.round(response.data.list[15].main.temp),
-            dayThreeTemp: Math.round(response.data.list[23].main.temp),
-            dayFourTemp: Math.round(response.data.list[31].main.temp),
-            dayFiveTemp: Math.round(response.data.list[39].main.temp),
+            dayOneTemp: Math.round(response.data.list[7].main.temp_min),
+            dayTwoTemp: Math.round(response.data.list[15].main.temp_min),
+            dayThreeTemp: Math.round(response.data.list[23].main.temp_min),
+            dayFourTemp: Math.round(response.data.list[31].main.temp_min),
+            dayFiveTemp: Math.round(response.data.list[39].main.temp_min),
+            dayOneIcon: `https://openweathermap.org/img/wn/${response.data.list[0].weather[0].icon}@2x.png`,
+            dayTwoIcon: `https://openweathermap.org/img/wn/${response.data.list[15].weather[0].icon}@2x.png`,
+            dayThreeIcon: `https://openweathermap.org/img/wn/${response.data.list[23].weather[0].icon}@2x.png`,
+            dayFourIcon: `https://openweathermap.org/img/wn/${response.data.list[31].weather[0].icon}@2x.png`,
+            dayFiveIcon: `https://openweathermap.org/img/wn/${response.data.list[39].weather[0].icon}@2x.png`,
         });
     }
 
