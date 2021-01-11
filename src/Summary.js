@@ -15,7 +15,18 @@ export default function Summary(props) {
     setUnit(`celcius`);
   }
   
-  
+  //if (props.main === "Clouds") {
+  //  document.querySelector(".Summary.card-body").style.backgroundImage = "url(./Images/clouds.jpg)";
+  //}
+  //if (props.main === "Sun") {
+  //  document.querySelector(".Summary.card-body").style.backgroundImage = "url(.Images/sun.jpg)";
+  //}
+  //if (props.main === "Rain" | "Drizzle" | "Thunderstorm") {
+  //  document.querySelector(".Summary.card-body").style.backgroundImage = "url(.Images/rain.jpg)";
+  //}
+  //if (props.main === "Snow") {
+  //  document.querySelector(".Summary.card-body").style.backgroundImage = "url(.Images/snow.jpg)";
+  //}
 
   if (unit === `celcius`) {
     return (
