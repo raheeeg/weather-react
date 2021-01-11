@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Summary.css";
 import DateTime from "./DateTime";
-import clouds from "./Images/clouds.jpg";
+
 
 export default function Summary(props) {
   const [unit, setUnit] = useState(`celcius`);
@@ -15,18 +15,19 @@ export default function Summary(props) {
     setUnit(`celcius`);
   }
   
-  //if (props.main === "Clouds") {
-  //  document.querySelector(".Summary.card-body").style.backgroundImage = "url(./Images/clouds.jpg)";
-  //}
-  //if (props.main === "Sun") {
-  //  document.querySelector(".Summary.card-body").style.backgroundImage = "url(.Images/sun.jpg)";
-  //}
-  //if (props.main === "Rain" | "Drizzle" | "Thunderstorm") {
-  //  document.querySelector(".Summary.card-body").style.backgroundImage = "url(.Images/rain.jpg)";
-  //}
-  //if (props.main === "Snow") {
-  //  document.querySelector(".Summary.card-body").style.backgroundImage = "url(.Images/snow.jpg)";
-  //}
+  console.log(props.main);
+  if (props.main === "Clouds") {
+    document.querySelector(".card-body").style.backgroundImage = "url(./Images/clouds.jpg)";
+  }
+  if (props.main === "Sun") {
+    document.querySelector(".card-body").style.backgroundImage = "url(.Images/sun.jpg)";
+  }
+  if (props.main === "Rain" | "Drizzle" | "Thunderstorm") {
+    document.querySelector(".card-body").style.backgroundImage = "url(.Images/rain.jpg)";
+  }
+  if (props.main === "Snow") {
+    document.querySelector(".card-body").style.backgroundImage = "url(.Images/snow.jpg)";
+  }
 
   if (unit === `celcius`) {
     return (
@@ -47,7 +48,7 @@ export default function Summary(props) {
           <span className="temperature">{props.temp}</span>
           <span className="unit">
               °C
-            |<a href="#" onClick={convertUnit} >°F</a>
+            |<a href="/" onClick={convertUnit} >°F</a>
           </span>
         </div>
         <div className="summary-text current-city col-6">{props.city}</div>
@@ -74,7 +75,7 @@ export default function Summary(props) {
         <div className="summary-text temp-current col-4">
           <span className="temperature">{Math.round((props.temp * 8) / 5 + 42)}</span>
           <span className="unit">
-            <a href="#" onClick={restoreDefault} className="active">
+            <a href="/" onClick={restoreDefault} className="active">
               °C
             </a>
             |°F
