@@ -15,24 +15,10 @@ export default function Summary(props) {
     setUnit(`celcius`);
   }
   
-  console.log(props.main);
-  if (props.main === "Clouds") {
-    document.querySelector(".card-body").style.backgroundImage = "url(./Images/clouds.jpg)";
-  }
-  if (props.main === "Sun") {
-    document.querySelector(".card-body").style.backgroundImage = "url(.Images/sun.jpg)";
-  }
-  if (props.main === "Rain" | "Drizzle" | "Thunderstorm") {
-    document.querySelector(".card-body").style.backgroundImage = "url(.Images/rain.jpg)";
-  }
-  if (props.main === "Snow") {
-    document.querySelector(".card-body").style.backgroundImage = "url(.Images/snow.jpg)";
-  }
-
   if (unit === `celcius`) {
     return (
-      <div className="Summary card">
-      <div className="card-body">
+      <div className="Summary card card-body">
+      <div className={props.main}>
         <div className="row">
         <div className="summary-text col-8">
           <ul>
@@ -59,8 +45,8 @@ export default function Summary(props) {
     );
   } else {
     return (
-      <div className="Summary card">
-      <div className="card-body">
+      <div className="Summary card card-body">
+      <div className={props.main}>
         <div className="row">
         <div className="summary-text col-8">
           <ul>

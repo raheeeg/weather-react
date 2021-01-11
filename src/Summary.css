@@ -1,7 +1,24 @@
 .Summary.card {
-  background-image: url(./Images/sky.jpg);
   border: 2px solid #120078;
   border-radius: 0;
+}
+
+.Clouds {
+  background-image: url(./Images/clouds.jpg);
+}
+
+.Rain,
+.Thunderstorn,
+.Drizzle {
+  background-image: url(./Images/rain.jpg);
+}
+
+.Sun {
+  background-image: url(./Images/sun.jpg);
+}
+
+.Snow {
+  background-image: url(./Images/snow.jpg);
 }
 
 .card-body {
