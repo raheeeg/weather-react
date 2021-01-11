@@ -17,6 +17,7 @@ export default function WeatherData(props) {
     city = city.trim();
     city = city[0].toUpperCase() + city.substring(1);
     }
+    let main = props.data.main;
 
     let sunrise = new Date (props.data.sunrise * 1000);
     let sunriseHour = sunrise.getUTCHours();
@@ -41,7 +42,7 @@ export default function WeatherData(props) {
     let sunsetFormatted = `${sunsetHour}:${sunsetMinutes}`;
 
     return (<div className="Weather">
-        <Summary city={city} temp={temp} tempLow={tempLow} tempHigh={tempHigh} />
+        <Summary city={city} temp={temp} tempLow={tempLow} tempHigh={tempHigh} main={main} />
         <Detailed description={description} humidity={humidity} wind={wind} sunrise={sunriseFormatted} sunset={sunsetFormatted} />
     </div>);
 }

@@ -5,17 +5,23 @@ import WeatherData from "./WeatherData";
 import Forecast from "./Forecast";
 
 export default function Search() {
-    const [city, setCity] = useState(null);
-    const [weather, setWeather] = useState({});
-    const [forecast, setForecast] = useState({});
+    const [city, setCity] = useState(autoLocation);
+    const [weather, setWeather] = useState({ready: false});
+    const [forecast, setForecast] = useState({ready: false});
+
+    function autoLocation() {
+        navigator.geolocation.getCurrentPosition(getLocation);
+    }
 
     function getWeather(response) {
         setWeather({
+            ready: true,
             temp: Math.round(response.data.main.temp),
             low: Math.round(response.data.main.temp_min),
             high: Math.round(response.data.main.temp_max),
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
+            main: response.data.weather[0].main,
             description: response.data.weather[0].description,
             sunrise: response.data.sys.sunrise,
             sunset: new Date(response.data.sys.sunset * 1000),
@@ -25,6 +31,7 @@ export default function Search() {
 
     function getForecast(response) {
         setForecast({
+            ready: true,
             dayOneTemp: Math.round(response.data.list[7].main.temp_min),
             dayTwoTemp: Math.round(response.data.list[15].main.temp_min),
             dayThreeTemp: Math.round(response.data.list[23].main.temp_min),
@@ -55,7 +62,7 @@ export default function Search() {
         let longitude = position.coords.longitude;
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(getWeather);
-        apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+        apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(getForecast);
     }
 

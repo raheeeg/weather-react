@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Summary.css";
 import DateTime from "./DateTime";
+import clouds from "./Images/clouds.jpg";
 
 export default function Summary(props) {
   const [unit, setUnit] = useState(`celcius`);
@@ -13,11 +14,13 @@ export default function Summary(props) {
   function restoreDefault(event) {
     setUnit(`celcius`);
   }
+  
+  
 
   if (unit === `celcius`) {
     return (
-    <div className="Summary card">
-      <div className="Summary card-body">
+      <div className="Summary card">
+      <div className="card-body">
         <div className="row">
         <div className="summary-text col-8">
           <ul>
@@ -39,13 +42,13 @@ export default function Summary(props) {
         <div className="summary-text current-city col-6">{props.city}</div>
         <div className="summary-text current-date-time col-6"><DateTime /></div>
       </div>
-    </div>
-    </div>
+      </div>
+      </div>
     );
   } else {
     return (
-    <div className="Summary card">
-      <div className="Summary card-body">
+      <div className="Summary card">
+      <div className="card-body">
         <div className="row">
         <div className="summary-text col-8">
           <ul>
@@ -69,8 +72,8 @@ export default function Summary(props) {
         <div className="summary-text current-city col-6">{props.city}</div>
         <div className="summary-text current-date-time col-6"><DateTime /></div>
       </div>
-    </div>
-    </div>
+      </div>
+      </div>
     );
   }
 }
